@@ -1,2 +1,2 @@
-export { default as DpiTokenMarketDataContext } from './DpiTokenMarketDataContext'
-export { default as DpiTokenMarketDataProvider } from './DpiTokenMarketDataProvider'
+export { default as WlkrTokenMarketDataContext } from './WlkrTokenMarketDataContext'
+export { default as WlkrTokenMarketDataProvider } from './WlkrTokenMarketDataProvider'

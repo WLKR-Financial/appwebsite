@@ -20,6 +20,7 @@ import { BuySellProvider } from 'contexts/BuySell'
 import ChainIdProvider from 'contexts/ChainData/ChainDataProvider'
 import { DataTokenMarketDataProvider } from 'contexts/DataTokenMarketData'
 import { DpiTokenMarketDataProvider } from 'contexts/DpiTokenMarketData'
+import { WlkrTokenMarketDataProvider } from 'contexts/WlkrTokenMarketData' // Added WLKR
 import { Eth2xFLIPTokenMarketDataProvider } from 'contexts/Eth2xFLIPTokenMarketData'
 import { Eth2xFLIPTokenSupplyCapProvider } from 'contexts/Eth2xFLIPTokenSupplyCap'
 import { Eth2xFliTokenMarketDataProvider } from 'contexts/Eth2xFliTokenMarketData'
@@ -53,6 +54,7 @@ import BED from 'views/BED'
 import BTC2XFLI from 'views/BTC2XFLI'
 import DATA from 'views/DATA'
 import DPI from 'views/DPI'
+import WLKR from 'views/WLKR'
 import ETH2XFLI from 'views/ETH2XFLI'
 import ETH2XFLIP from 'views/ETH2XFLIP'
 import Farm from 'views/Farm'
@@ -103,6 +105,9 @@ const App: React.FC = () => {
             </Route>
             <Route exact path='/dpi'>
               <DPI title={'Index - DPI'} />
+            </Route>
+            <Route exact path='/wlkr'>
+              <WLKR title={'Index - WLKR'} />
             </Route>
             <Route exact path='/mvi'>
               <MVI title={'Index - MVI'} />
@@ -189,6 +194,7 @@ const Providers: React.FC = ({ children }) => {
                                                 <Eth2xFliTokenSupplyCapProvider>
                                                   <Btc2xFliTokenMarketDataProvider>
                                                     <Btc2xFliTokenSupplyCapProvider>
+                                                    <WlkrTokenMarketDataProvider>
                                                       <DpiTokenMarketDataProvider>
                                                         <MviTokenMarketDataProvider>
                                                           <BedTokenMarketDataProvider>
@@ -214,6 +220,7 @@ const Providers: React.FC = ({ children }) => {
                                                           </BedTokenMarketDataProvider>
                                                         </MviTokenMarketDataProvider>
                                                       </DpiTokenMarketDataProvider>
+                                                     </WlkrTokenMarketDataProvider>
                                                     </Btc2xFliTokenSupplyCapProvider>
                                                   </Btc2xFliTokenMarketDataProvider>
                                                 </Eth2xFliTokenSupplyCapProvider>
