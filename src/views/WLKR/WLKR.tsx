@@ -18,7 +18,7 @@ import useWallet from 'hooks/useWallet'
 import BigNumber from 'utils/bignumber'
 import { MAINNET_CHAIN_DATA, POLYGON_CHAIN_DATA } from 'utils/connectors'
 
-const DpiProductPage = (props: { title: string }) => {
+const WlkrProductPage = (props: { title: string }) => {
   useEffect(() => {
     document.title = props.title
   }, [props.title])

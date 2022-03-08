@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const Explanation: React.FC = () => (
   <div data-cy='explanation'>
-    <StyledExplanationTitle>What is the Index Coop?</StyledExplanationTitle>
+    <StyledExplanationTitle>What is Walker Financial?</StyledExplanationTitle>
     <StyledExplanationContainer>
       <StyledCardContainer>
         <Surface>
@@ -14,11 +14,11 @@ const Explanation: React.FC = () => (
             <StyledCardIcon src='https://index-dao.s3.amazonaws.com/about_icon_1.svg' />
             <StyledCardTitle>Diversified Risk Products</StyledCardTitle>
             <StyledCardDescription>
-              Index Coop creates and maintains the world's best crypto index
-              products.
+              Walker is a registered investment advisor (RIA), and creates and maintains the world's best crypto index
+              products, along with traditional crypto portfolio management.
             </StyledCardDescription>
             <StyledCardDescription>
-              All index products are always fully collateralized.
+              All walker products are always fully collateralized.
             </StyledCardDescription>
           </StyledCardContent>
         </Surface>
@@ -32,8 +32,8 @@ const Explanation: React.FC = () => (
             <StyledCardIcon src='https://index-dao.s3.amazonaws.com/about_icon_2.svg' />
             <StyledCardTitle>Decentralized & Autonomous</StyledCardTitle>
             <StyledCardDescription>
-              Index Coop is a Decentralized and Autonomous Asset Manager
-              governed, maintained, and upgraded by INDEX token holders.
+            The Token Walker (WLKRR) is a Decentralized and Autonomous Asset Manager
+              governed, maintained, and upgraded by WLKRR token holders.
             </StyledCardDescription>
           </StyledCardContent>
         </Surface>
@@ -51,8 +51,8 @@ const Explanation: React.FC = () => (
               infrastructure.
             </StyledCardDescription>
             <StyledCardDescription>
-              Product methodologies are sourced from industry experts like DeFi
-              Pulse.
+              Product methodologies are sourced from industry experts like WLKR
+              Innovation.
             </StyledCardDescription>
           </StyledCardContent>
         </Surface>

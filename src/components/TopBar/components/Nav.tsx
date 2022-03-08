@@ -13,7 +13,7 @@ const Nav: React.FC = () => {
       <ProductsDropdown />
       <LeverageProductsDropdown />
       <StyledLink exact activeClassName='active' to='/index'>
-        $INDEX
+        $WALKRR
       </StyledLink>
       <StyledLink exact activeClassName='active' to='/liquidity-mining'>
         Liquidity Mining
