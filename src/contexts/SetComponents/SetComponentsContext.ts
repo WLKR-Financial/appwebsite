@@ -4,6 +4,7 @@ import { SetComponent } from './SetComponent'
 
 interface SetComponentsProps {
   dpiComponents?: SetComponent[]
+  wlkrComponents?: SetComponent[]
   mviComponents?: SetComponent[]
   bedComponents?: SetComponent[]
   gmiComponents?: SetComponent[]

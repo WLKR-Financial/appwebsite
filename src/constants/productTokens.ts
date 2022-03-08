@@ -1,6 +1,7 @@
 import bedBorderLogo from 'assets/bed-border.png'
 import dataLogo from 'assets/data-logo.png'
 import gmiLogo from 'assets/gmilogo.png'
+import wlkrinnovationLogo from 'assets/wlkrlogo.png'
 import iethflipLogo from 'assets/iethfliplogo.svg'
 import imaticflipLogo from 'assets/imaticflilogo.svg'
 import indexLogo from 'assets/index-token.png'

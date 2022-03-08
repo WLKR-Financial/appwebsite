@@ -13,6 +13,8 @@ import {
   dataTokenAddress,
   dpiTokenAddress,
   dpiTokenPolygonAddress,
+  wlkrTokenAddress,
+  wlkrTokenPolygonAddress,
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   gmiTokenAddress,
@@ -37,6 +39,7 @@ const VS_CURRENCY = 'usd'
 const SetComponentsProvider: React.FC = ({ children }) => {
   const {
     dpiPrice,
+    wlkrPrice,
     mviPrice,
     bedPrice,
     gmiPrice,
@@ -49,6 +52,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
     iethflipPrice,
   } = usePrices()
   const [dpiComponents, setDpiComponents] = useState<SetComponent[]>([])
+  const [wlkrComponents, setWlkrComponents] = useState<SetComponent[]>([])
   const [mviComponents, setMviComponents] = useState<SetComponent[]>([])
   const [bedComponents, setBedComponents] = useState<SetComponent[]>([])
   const [gmiComponents, setGmiComponents] = useState<SetComponent[]>([])
@@ -81,6 +85,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
       chainId === MAINNET_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenAddress &&
+      wlkrTokenAddress &&
       mviTokenAddress &&
       bedTokenAddress &&
       gmiTokenAddress &&
@@ -94,6 +99,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
         provider,
         [
           dpiTokenAddress,
+          wlkrTokenAddress,
           mviTokenAddress,
           bedTokenAddress,
           gmiTokenAddress,
@@ -103,7 +109,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
         ],
         chainId
       ).then(async (result) => {
-        const [dpi, mvi, bed, gmi, eth2xfli, btc2xfli, data] = result
+        const [dpi, wlkr, mvi, bed, gmi, eth2xfli, btc2xfli, data] = result
 
         const dpiComponentPrices = await getPositionPrices(dpi)
         const dpiPositions = dpi.positions.map(async (position) => {
@@ -120,6 +126,22 @@ const SetComponentsProvider: React.FC = ({ children }) => {
         Promise.all(dpiPositions)
           .then(sortPositionsByPercentOfSet)
           .then(setDpiComponents)
+
+        const wlkrComponentPrices = await getPositionPrices(wlkr)
+        const wlkrPositions = wlkr.positions.map(async (position) => {
+          return await convertPositionToSetComponent(
+            position,
+            tokenList,
+            wlkrComponentPrices[position.component.toLowerCase()]?.[VS_CURRENCY],
+            wlkrComponentPrices[position.component.toLowerCase()]?.[
+              `${VS_CURRENCY}_24h_change`
+            ],
+            wlkrPrice
+          )
+        })
+        Promise.all(wlkrPositions)
+          .then(sortPositionsByPercentOfSet)
+          .then(setWlkrComponents)
 
         const mviComponentPrices = await getPositionPrices(mvi)
         const mviPositions = mvi.positions.map(async (position) => {
@@ -228,6 +250,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
     provider,
     tokenList,
     dpiPrice,
+    wlkrPrice,
     mviPrice,
     chainId,
     bedPrice,
@@ -244,6 +267,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
       chainId === POLYGON_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenPolygonAddress &&
+      wlkrTokenPolygonAddress &&
       mviTokenPolygonAddress &&
       eth2xflipTokenAddress &&
       iethflipTokenAddress &&
@@ -367,6 +391,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
     <SetComponentsContext.Provider
       value={{
         dpiComponents: dpiComponents,
+        wlkrComponents: wlkrComponents,
         mviComponents: mviComponents,
         bedComponents: bedComponents,
         gmiComponents: gmiComponents,
