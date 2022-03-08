@@ -18,7 +18,7 @@ const Logo: React.FC = () => {
   else logo = darkMode ? indexLogoWhite : indexLogoBlack
 
   return (
-    <Link to={{pathname: "https://indexcoop.com"}} target={'_top'}>
+    <Link to={{pathname: "https://wlkr.finance"}} target={'_top'}>
       <StyledLogo>
         <StyledImage src={logo} alt='index-logo' />
       </StyledLogo>

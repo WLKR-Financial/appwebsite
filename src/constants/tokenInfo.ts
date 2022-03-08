@@ -19,8 +19,8 @@ import {
   mviTokenPolygonAddress,
   usdcTokenAddress,
   usdcTokenPolygonAddress,
-  wlkrTokenAddress,
-  wlkrTokenPolygonAddress,
+  wlkrTokenAddress, // Added WLKR
+  wlkrTokenPolygonAddress, // Added WLKR
   wethTokenPolygonAddress,
 } from './ethContractAddresses'
 
@@ -54,7 +54,7 @@ export const tokenInfo: any = {
     decimals: 18,
   },
   wlkr: {
-    address: wlkrTokenAddress,
+    address: wlkrTokenAddress, // Added WLKR
     decimals: 18,
   },
   index: {
@@ -84,7 +84,7 @@ export const polygonTokenInfo: any = {
     decimals: 18,
   },
   'wlkr': {
-    address: wlkrTokenPolygonAddress,
+    address: wlkrTokenPolygonAddress, // Added WLKR
     decimals: 18,
   },
   'gmi': {

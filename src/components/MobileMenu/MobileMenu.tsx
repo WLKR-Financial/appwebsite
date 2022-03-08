@@ -19,10 +19,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           <StyledLink
             exact
             activeClassName='active'
-            to='/dpi'
+            to='/wlkr'
             onClick={onDismiss}
           >
-            DeFi Pulse Index
+            WLKR Innovation Index
           </StyledLink>
           <StyledLink
             exact
@@ -110,7 +110,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
             to='/index'
             onClick={onDismiss}
           >
-            Index Token
+            WLKR Token
           </StyledLink>
           <StyledLink
             exact
