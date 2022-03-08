@@ -28,7 +28,7 @@ const PricesProvider: React.FC = ({ children }) => {
   const [indexPrice, setIndexPrice] = useState<string>('0')
   const [ethereumPrice, setEthereumPrice] = useState<string>('0')
   const [dpiPrice, setDpiPrice] = useState<number>(0)
-  const [wlkrPrice, setWlkrPrice] = useState<number>(0)
+  const [wlkrPrice, setWlkrPrice] = useState<number>(0) // Added WLKR
   const [mviPrice, setMviPrice] = useState<number>(0)
   const [bedPrice, setBedPrice] = useState<number>(0)
   const [gmiPrice, setGmiPrice] = useState<number>(0)

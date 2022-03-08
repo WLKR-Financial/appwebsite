@@ -9,6 +9,8 @@ import {
   dataTokenAddress,
   dpiTokenAddress,
   dpiTokenPolygonAddress,
+  wlkrTokenAddress,
+  wlkrTokenPolygonAddress,
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   gmiTokenAddress,
@@ -26,6 +28,7 @@ import TokenSupplyContext from './TokenSupplyContext'
 
 const TokenSupplyProvider: React.FC = ({ children }) => {
   const [dpiTotalSupply, setDpiTotalSupply] = useState<BigNumber>()
+  const [wlkrTotalSupply, setWlkrTotalSupply] = useState<BigNumber>()
   const [mviTotalSupply, setMviTotalSupply] = useState<BigNumber>()
   const [bedTotalSupply, setBedTotalSupply] = useState<BigNumber>()
   const [gmiTotalSupply, setGmiTotalSupply] = useState<BigNumber>()
@@ -47,6 +50,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
       chainId === MAINNET_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenAddress &&
+      wlkrTokenAddress &&
       mviTokenAddress &&
       bedTokenAddress &&
       gmiTokenAddress &&
@@ -58,6 +62,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
         provider,
         [
           dpiTokenAddress,
+          wlkrTokenAddress, // Added WLKR
           mviTokenAddress,
           bedTokenAddress,
           gmiTokenAddress,
@@ -70,6 +75,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
         .then((result) => {
           const [
             dpiResult,
+            wlkrResult, // Added WLKR
             mviResult,
             bedResult,
             gmiResult,
@@ -79,6 +85,11 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
           ] = result
           setDpiTotalSupply(
             new BigNumber(dpiResult.totalSupply.toString()).dividedBy(
+              new BigNumber(10).pow(18)
+            )
+          )
+          setWlkrTotalSupply(
+            new BigNumber(wlkrResult.totalSupply.toString()).dividedBy(    // Added WLKR
               new BigNumber(10).pow(18)
             )
           )
@@ -120,6 +131,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
       chainId === POLYGON_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenPolygonAddress &&
+      wlkrTokenPolygonAddress &&    // Added WLKR
       mviTokenPolygonAddress &&
       eth2xflipTokenAddress &&
       iethflipTokenAddress &&
@@ -130,6 +142,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
         provider,
         [
           dpiTokenPolygonAddress,
+          wlkrTokenPolygonAddress,     // Added WLKR
           mviTokenPolygonAddress,
           eth2xflipTokenAddress,
           iethflipTokenAddress,
@@ -141,6 +154,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
         .then((result) => {
           const [
             dpiResult,
+            wlkrResult,   // Added WLKR
             mviResult,
             eth2xFLIPResult,
             iethFLIPResult,
@@ -149,6 +163,11 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
           ] = result
           setDpiTotalSupply(
             new BigNumber(dpiResult.totalSupply.toString()).dividedBy(
+              new BigNumber(10).pow(18)
+            )
+          )
+          setWlkrTotalSupply(
+            new BigNumber(wlkrResult.totalSupply.toString()).dividedBy(   // Added WLKR
               new BigNumber(10).pow(18)
             )
           )
@@ -192,6 +211,7 @@ const TokenSupplyProvider: React.FC = ({ children }) => {
     <TokenSupplyContext.Provider
       value={{
         dpiTotalSupply: dpiTotalSupply,
+        wlkrTotalSupply: wlkrTotalSupply, // Added WLKR
         mviTotalSupply: mviTotalSupply,
         bedTotalSupply: bedTotalSupply,
         gmiTotalSupply: gmiTotalSupply,

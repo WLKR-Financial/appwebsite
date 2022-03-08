@@ -4,6 +4,7 @@ import BigNumber from 'bignumber.js'
 
 interface TokenSupplyProps {
   dpiTotalSupply?: BigNumber
+  wlkrTotalSupply?: BigNumber
   mviTotalSupply?: BigNumber
   bedTotalSupply?: BigNumber
   gmiTotalSupply?: BigNumber
@@ -18,6 +19,7 @@ interface TokenSupplyProps {
 
 const TokenSupply = createContext<TokenSupplyProps>({
   dpiTotalSupply: undefined,
+  wlkrTotalSupply: undefined,
   mviTotalSupply: undefined,
   bedTotalSupply: undefined,
   gmiTotalSupply: undefined,

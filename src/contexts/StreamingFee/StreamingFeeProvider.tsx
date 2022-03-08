@@ -5,6 +5,8 @@ import {
   btc2xfliTokenAddress,
   dpiTokenAddress,
   dpiTokenPolygonAddress,
+  wlkrTokenAddress,
+  wlkrTokenPolygonAddress,
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   gmiTokenAddress,
@@ -24,6 +26,7 @@ import StreamingFeeContext from './StreamingFeeContext'
 
 const StreamingFeeProvider: React.FC = ({ children }) => {
   const [dpiStreamingFee, setDpiStreamingFee] = useState<string>()
+  const [wlkrStreamingFee, setWlkrStreamingFee] = useState<string>()
   const [mviStreamingFee, setMviStreamingFee] = useState<string>()
   const [bedStreamingFee, setBedStreamingFee] = useState<string>()
   const [gmiStreamingFee, setGmiStreamingFee] = useState<string>()
@@ -42,6 +45,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
       chainId === MAINNET_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenAddress &&
+      wlkrTokenAddress &&
       mviTokenAddress &&
       bedTokenAddress &&
       gmiTokenAddress &&
@@ -52,6 +56,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
         provider,
         [
           dpiTokenAddress,
+          wlkrTokenAddress,
           mviTokenAddress,
           bedTokenAddress,
           gmiTokenAddress,
@@ -63,6 +68,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
         .then((result) => {
           const [
             dpiResult,
+            wlkrResult,
             mviResult,
             bedResult,
             gmiResult,
@@ -71,6 +77,9 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
           ] = result
           setDpiStreamingFee(
             convertToPercentage(dpiResult.streamingFeePercentage)
+          )
+          setWlkrStreamingFee(
+            convertToPercentage(wlkrResult.streamingFeePercentage)
           )
           setMviStreamingFee(
             convertToPercentage(mviResult.streamingFeePercentage)
@@ -94,6 +103,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
       chainId === POLYGON_CHAIN_DATA.chainId &&
       provider &&
       dpiTokenPolygonAddress &&
+      wlkrTokenPolygonAddress &&
       mviTokenPolygonAddress &&
       eth2xflipTokenAddress &&
       matic2xflipTokenAddress &&
@@ -104,6 +114,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
         provider,
         [
           dpiTokenPolygonAddress,
+          wlkrTokenPolygonAddress,
           mviTokenPolygonAddress,
           eth2xflipTokenAddress,
           matic2xflipTokenAddress,
@@ -115,6 +126,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
         .then((result) => {
           const [
             dpiResult,
+            wlkrResult,
             mviResult,
             eth2xFlipResult,
             matic2xFlipResult,
@@ -123,6 +135,9 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
           ] = result
           setDpiStreamingFee(
             convertToPercentage(dpiResult.streamingFeePercentage)
+          )
+          setWlkrStreamingFee(
+            convertToPercentage(wlkrResult.streamingFeePercentage)
           )
           setMviStreamingFee(
             convertToPercentage(mviResult.streamingFeePercentage)
@@ -152,6 +167,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
     <StreamingFeeContext.Provider
       value={{
         dpiStreamingFee: dpiStreamingFee,
+        wlkrStreamingFee: wlkrStreamingFee,
         mviStreamingFee: mviStreamingFee,
         bedStreamingFee: bedStreamingFee,
         gmiStreamingFee: gmiStreamingFee,

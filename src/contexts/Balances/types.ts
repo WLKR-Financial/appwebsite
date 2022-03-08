@@ -4,6 +4,7 @@ export interface ContextValues {
   ethBalance?: BigNumber
   indexBalance?: BigNumber
   dpiBalance?: BigNumber
+  wlkrBalance?: BigNumber // Added WLKR
   ethfliBalance?: BigNumber
   btcfliBalance?: BigNumber
   mviBalance?: BigNumber
@@ -16,6 +17,7 @@ export interface ContextValues {
   // polygon
   wethBalancePolygon?: BigNumber
   dpiBalancePolygon?: BigNumber
+  wlkrBalancePolygon?: BigNumber // Added WLKR
   mviBalancePolygon?: BigNumber
   ethflipBalance?: BigNumber
   daiBalancePolygon?: BigNumber

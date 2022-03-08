@@ -11,8 +11,8 @@ import {
   dataTokenPolygonAddress,
   dpiTokenAddress,
   dpiTokenPolygonAddress,
-  wlkrTokenAddress, // added wlkr
-  wlkrTokenPolygonAddress, // added wlkr
+  wlkrTokenAddress, // added WLKR
+  wlkrTokenPolygonAddress, // added WLKR
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   farmTwoAddress,
@@ -48,7 +48,7 @@ const Provider: React.FC = ({ children }) => {
   const [ethBalance, setEthBalance] = useState<BigNumber>()
   const [indexBalance, setIndexBalance] = useState<BigNumber>()
   const [dpiBalance, setDpiBalance] = useState<BigNumber>()
-  const [wlkrBalance, setWlkrBalance] = useState<BigNumber>()
+  const [wlkrBalance, setWlkrBalance] = useState<BigNumber>() // Added WLKR
   const [ethfliBalance, setEthFliBalance] = useState<BigNumber>()
   const [btcfliBalance, setBtcFliBalance] = useState<BigNumber>()
   const [mviBalance, setMviBalance] = useState<BigNumber>()
@@ -61,7 +61,7 @@ const Provider: React.FC = ({ children }) => {
   // polygon balances
   const [wethBalancePolygon, setWethBalancePolygon] = useState<BigNumber>()
   const [dpiBalancePolygon, setDpiBalancePolygon] = useState<BigNumber>()
-  const [wlkrBalancePolygon, setWlkrBalancePolygon] = useState<BigNumber>()
+  const [wlkrBalancePolygon, setWlkrBalancePolygon] = useState<BigNumber>() // Added WLKR
   const [ethflipBalance, setEthFlipBalance] = useState<BigNumber>()
   const [mviBalancePolygon, setMviBalancePolygon] = useState<BigNumber>()
   const [daiBalancePolygon, setDaiBalancePolygon] = useState<BigNumber>()
@@ -144,7 +144,7 @@ const Provider: React.FC = ({ children }) => {
           getEthBalance(provider, userAddress),
           getBalance(provider, indexTokenAddress, userAddress),
           getBalance(provider, dpiTokenAddress, userAddress),
-          getBalance(provider, wlkrTokenAddress, userAddress),
+          getBalance(provider, wlkrTokenAddress, userAddress), // Added WLKR
           getBalance(provider, eth2xfliTokenAddress, userAddress),
           getBalance(provider, btc2xfliTokenAddress, userAddress),
           getBalance(provider, mviTokenAddress, userAddress),
@@ -180,7 +180,7 @@ const Provider: React.FC = ({ children }) => {
         setEthBalance(new BigNumber(balances[0]))
         setIndexBalance(new BigNumber(balances[1]))
         setDpiBalance(new BigNumber(balances[2]))
-        setWlkrBalance(new BigNumber(balances[3]))
+        setWlkrBalance(new BigNumber(balances[3])) // Added WLKR
         setEthFliBalance(new BigNumber(balances[4]))
         setBtcFliBalance(new BigNumber(balances[5]))
         setMviBalance(new BigNumber(balances[6]))
@@ -208,7 +208,7 @@ const Provider: React.FC = ({ children }) => {
           //polygon
           getBalance(provider, wethTokenPolygonAddress, userAddress),
           getBalance(provider, dpiTokenPolygonAddress, userAddress),
-          getBalance(provider, wlkrTokenPolygonAddress, userAddress),
+          getBalance(provider, wlkrTokenPolygonAddress, userAddress), // Added WLKR
           getBalance(provider, eth2xflipTokenAddress, userAddress),
           getBalance(provider, mviTokenPolygonAddress, userAddress),
           getBalance(provider, daiTokenPolygonAddress, userAddress),
