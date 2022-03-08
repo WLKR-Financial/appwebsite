@@ -4,6 +4,7 @@ import {
   BedIndex,
   Bitcoin2xFlexibleLeverageIndex,
   DefiPulseIndex,
+  WLKRInnovation,
   Ethereum2xFlexibleLeverageIndex,
   Ethereum2xFLIP,
   GmiIndex,
@@ -15,6 +16,7 @@ import {
 
 interface StreamingFeeProps {
   dpiStreamingFee?: string
+  wlkrStreamingFee?: string
   mviStreamingFee?: string
   bedStreamingFee?: string
   gmiStreamingFee?: string
@@ -28,6 +30,7 @@ interface StreamingFeeProps {
 
 const StreamingFee = createContext<StreamingFeeProps>({
   dpiStreamingFee: DefiPulseIndex.fees?.streamingFee,
+  wlkrStreamingFee: WLKRInnovation.fees?.streamingFee,
   mviStreamingFee: MetaverseIndex.fees?.streamingFee,
   bedStreamingFee: BedIndex.fees?.streamingFee,
   gmiStreamingFee: GmiIndex.fees?.streamingFee,
