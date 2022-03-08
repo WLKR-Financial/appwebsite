@@ -37,6 +37,8 @@ const WalletModal: React.FC<ModalProps> = ({ isOpen, onDismiss }) => {
     indexBalance,
     dpiBalance,
     dpiBalancePolygon,
+    wlkrBalance,
+    wlkrBalancePolygon,
     mviBalance,
     mviBalancePolygon,
     ethfliBalance,
@@ -117,11 +119,11 @@ const WalletModal: React.FC<ModalProps> = ({ isOpen, onDismiss }) => {
           <Box row>
             <FancyValue
               icon={{
-                alt: 'Defi Pulse Icon',
+                alt: 'WLKR Innovation Icon',
                 src: dpiTokenImage,
               }}
-              label='DPI balance'
-              link={`https://etherscan.io/address/${tokenAddresses.dpiTokenAddress}`}
+              label='WLKR balance'
+              link={`https://etherscan.io/address/${tokenAddresses.wlkrTokenAddress}`}
               value={displayFromWei(dpiBalance)}
             />
           </Box>

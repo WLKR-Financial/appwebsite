@@ -20,7 +20,7 @@ const ProductsDropdown: React.FC = () => {
 
   const dropdownSelectStyles = useMemo(() => {
     const isProductRouteActive =
-      pathname === '/dpi' ||
+      pathname === '/wlkr' ||
       pathname === '/mvi' ||
       pathname === '/bed' ||
       pathname === '/gmi' ||
@@ -77,11 +77,11 @@ const ProductsDropdown: React.FC = () => {
   return (
     <Select
       isSearchable={false}
-      value={{ label: 'Index Products' } as any}
+      value={{ label: 'Walker Products' } as any}
       options={[
         {
-          value: 'dpi',
-          label: 'DeFi Pulse Index',
+          value: 'wlkr',
+          label: 'Walker Innovation Index',
         },
         {
           value: 'mvi',

@@ -13,10 +13,10 @@ const DpiZerionPromo: React.FC<ToastProps> = ({ closeToast }) => {
     <StyledToastContainer>
       <StyledToastImage alt='Defi Pulse Icon' src={dpiTokenImage} />
       <StyledToastText
-        href='https://app.zerion.io/invest/asset/DPI-0x1494ca1f11d487c2bbe4543e90080aeba4ba3c2b'
+        href='https://app.zerion.io/invest/asset/WLKR-0xd64deea5f24934e3a1aa752912aee8ffd8300c3f'
         target='_blank'
       >
-        Buy DPI on Zerion, earn 5% cashback!
+        Buy WLKR on Zerion, earn 5% cashback!
       </StyledToastText>
       <StyledCloseButton onClick={closeToast}>✕</StyledCloseButton>
     </StyledToastContainer>
