@@ -7,6 +7,7 @@ import {
   btc2xfliTokenAddress,
   dataTokenAddress,
   dpiTokenAddress,
+  wlkrTokenAddress,
   eth2xfliTokenAddress,
   farmTwoAddress,
   gmiStakingRewardsAddress,
@@ -27,6 +28,7 @@ const PricesProvider: React.FC = ({ children }) => {
   const [indexPrice, setIndexPrice] = useState<string>('0')
   const [ethereumPrice, setEthereumPrice] = useState<string>('0')
   const [dpiPrice, setDpiPrice] = useState<number>(0)
+  const [wlkrPrice, setWlkrPrice] = useState<number>(0)
   const [mviPrice, setMviPrice] = useState<number>(0)
   const [bedPrice, setBedPrice] = useState<number>(0)
   const [gmiPrice, setGmiPrice] = useState<number>(0)
@@ -129,6 +131,7 @@ const PricesProvider: React.FC = ({ children }) => {
   useEffect(() => {
     const productAddresses = [
       dpiTokenAddress,
+      wlkrTokenAddress,
       mviTokenAddress,
       bedTokenAddress,
       gmiTokenAddress,
@@ -143,6 +146,7 @@ const PricesProvider: React.FC = ({ children }) => {
       .then((response) => response.json())
       .then((response) => {
         setDpiPrice(response[dpiTokenAddress?.toLowerCase() as string].usd)
+        setWlkrPrice(response[wlkrTokenAddress?.toLowerCase() as string].usd)
         setMviPrice(response[mviTokenAddress?.toLowerCase() as string].usd)
         setBedPrice(response[bedTokenAddress?.toLowerCase() as string].usd)
         setGmiPrice(response[gmiTokenAddress?.toLowerCase() as string].usd)
@@ -271,6 +275,7 @@ const PricesProvider: React.FC = ({ children }) => {
         indexPrice,
         ethereumPrice,
         dpiPrice,
+        wlkrPrice,
         mviPrice,
         bedPrice,
         gmiPrice,

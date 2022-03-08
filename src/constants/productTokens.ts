@@ -176,6 +176,22 @@ export const IMaticFLIP: ProductToken = {
   },
 }
 
+export const WLKRInnovation: ProductToken = {
+  name: 'Walker Innovation',
+  symbol: 'WLKR',
+  address: tokenAddresses.wlkrTokenAddress,
+  polygonAddress: tokenAddresses.wlkrTokenPolygonAddress,
+  image: wlkrinnovationLogo,
+  coingeckoId: 'index-coop-inverse-matic-flexible-leverage-index',
+  tokensetsId: 'wlkrinnovation',
+  tokenSelector: 'wlkrinnovation',
+  fees: {
+    streamingFee: '2%',
+    mintRedeemFee: '0.1%',
+  },
+}
+
+
 export const IEthereumFLIP: ProductToken = {
   name: 'Inverse ETH Flexible Leverage Index',
   symbol: 'iETH-FLI-P',
@@ -200,6 +216,7 @@ export const productTokensBySymbol = {
   'BTC2x-FLI': Bitcoin2xFlexibleLeverageIndex,
   'BED': BedIndex,
   'DATA': DataIndex,
+  'WLKR': WLKRInnovation,
   'GMI': GmiIndex,
 }
 
@@ -212,6 +229,7 @@ const indexNames = [
   Bitcoin2xFlexibleLeverageIndex,
   BedIndex,
   DataIndex,
+  WLKRInnovation,
   GmiIndex,
 ]
 

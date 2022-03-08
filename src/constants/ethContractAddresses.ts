@@ -64,6 +64,7 @@ export const may2021RewardsAddress =
 // Mainnet Addresses
 export const indexTokenAddress = process.env.REACT_APP_INDEX_TOKEN_ADDRESS
 export const dpiTokenAddress = process.env.REACT_APP_DPI_TOKEN_ADDRESS
+export const wlkrTokenAddress = process.env.REACT_APP_WLKR_TOKEN_ADDRESS
 export const eth2xfliTokenAddress =
   process.env.REACT_APP_ETH2X_FLI_TOKEN_ADDRESS
 export const mviTokenAddress = process.env.REACT_APP_MVI_TOKEN_ADDRESS
@@ -88,6 +89,8 @@ export const indexTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_INDEX_TOKEN_ADDRESS
 export const dpiTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_DPI_TOKEN_ADDRESS
+export const wlkrTokenPolygonAddress =
+  process.env.REACT_APP_POLYGON_WLKR_TOKEN_ADDRESS
 export const mviTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_MVI_TOKEN_ADDRESS
 export const daiTokenPolygonAddress =

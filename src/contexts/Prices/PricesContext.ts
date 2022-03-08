@@ -4,6 +4,7 @@ interface PricesContextValues {
   indexPrice?: string
   ethereumPrice?: string
   dpiPrice: number
+  wlkrPrice: number
   mviPrice: number
   bedPrice: number
   gmiPrice: number
@@ -23,6 +24,7 @@ interface PricesContextValues {
 
 const PricesContext = createContext<PricesContextValues>({
   dpiPrice: 0,
+  wlkrPrice: 0,
   mviPrice: 0,
   bedPrice: 0,
   gmiPrice: 0,
