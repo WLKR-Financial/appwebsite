@@ -1,1 +1,1 @@
-export { default } from './CNDL'
+export { default } from './CNDLPage'
