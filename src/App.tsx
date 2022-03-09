@@ -56,7 +56,9 @@ import BED from 'views/BED'
 import BTC2XFLI from 'views/BTC2XFLI'
 import DATA from 'views/DATA'
 import DPI from 'views/DPI'
-import WLKR from 'views/WLKR'
+import WLKR from 'views/WLKR' // Added WLKR
+import WLKRR from 'views/WLKRR' // Added WLKRR
+import CNDL from 'views/CNDL' // Added CNDL
 import ETH2XFLI from 'views/ETH2XFLI'
 import ETH2XFLIP from 'views/ETH2XFLIP'
 import Farm from 'views/Farm'
@@ -103,16 +105,13 @@ const App: React.FC = () => {
           />
           <Switch>
             <Route exact path='/'>
-              <DPI title={'Index - DPI'} />
-            </Route>
-            <Route exact path='/dpi'>
-              <DPI title={'Index - DPI'} />
+              <DPI title={'Index - WLKR'} />
             </Route>
             <Route exact path='/wlkr'>
-              <WLKR title={'Index - WLKR'} />
+              <DPI title={'Index - WLKR'} />
             </Route>
-            <Route exact path='/mvi'>
-              <MVI title={'Index - MVI'} />
+            <Route exact path='/cndl'>
+              <MVI title={'Index - CNDL'} />
             </Route>
             <Route exact path='/ethfli'>
               <ETH2XFLI title={'Index - ETH2xFLI'} />
@@ -141,8 +140,8 @@ const App: React.FC = () => {
             <Route exact path='/imatic'>
               <IMATICFLIP title={'Index - iMATIC-FLI-P'} />
             </Route>
-            <Route exact path='/index'>
-              <INDEX title={'Index - Index'} />
+            <Route exact path='/wlkrr'>
+              <INDEX title={'Index - Walker'} />
             </Route>
             <Route exact path='/liquidity-mining'>
               <Farm title={'Index - Liquidity Mining'} />
@@ -196,13 +195,12 @@ const Providers: React.FC = ({ children }) => {
                                                 <Eth2xFliTokenSupplyCapProvider>
                                                   <Btc2xFliTokenMarketDataProvider>
                                                     <Btc2xFliTokenSupplyCapProvider>
-                                                    <WlkrTokenMarketDataProvider>
-                                                      <DpiTokenMarketDataProvider>
-                                                        <MviTokenMarketDataProvider>
+                                                      <WlkrTokenMarketDataProvider>
+                                                        <CndlTokenMarketDataProvider>
                                                           <BedTokenMarketDataProvider>
                                                             <GmiTokenMarketDataProvider>
                                                               <DataTokenMarketDataProvider>
-                                                                <IndexTokenMarketDataProvider>
+                                                                <WlkrrTokenMarketDataProvider>
                                                                   <V3FarmingProvider>
                                                                     <GmiFarmingProvider>
                                                                       <StreamingFeeProvider>
@@ -216,13 +214,12 @@ const Providers: React.FC = ({ children }) => {
                                                                       </StreamingFeeProvider>
                                                                     </GmiFarmingProvider>
                                                                   </V3FarmingProvider>
-                                                                </IndexTokenMarketDataProvider>
+                                                                </WlkrrTokenMarketDataProvider>
                                                               </DataTokenMarketDataProvider>
                                                             </GmiTokenMarketDataProvider>
                                                           </BedTokenMarketDataProvider>
-                                                        </MviTokenMarketDataProvider>
-                                                      </DpiTokenMarketDataProvider>
-                                                     </WlkrTokenMarketDataProvider>
+                                                        </CndlTokenMarketDataProvider>
+                                                      </WlkrTokenMarketDataProvider>
                                                     </Btc2xFliTokenSupplyCapProvider>
                                                   </Btc2xFliTokenMarketDataProvider>
                                                 </Eth2xFliTokenSupplyCapProvider>
