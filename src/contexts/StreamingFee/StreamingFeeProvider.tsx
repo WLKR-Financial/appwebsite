@@ -167,7 +167,7 @@ const StreamingFeeProvider: React.FC = ({ children }) => {
     <StreamingFeeContext.Provider
       value={{
         dpiStreamingFee: dpiStreamingFee,
-        wlkrStreamingFee: wlkrStreamingFee,
+        wlkrStreamingFee: wlkrStreamingFee, // Added WLKR
         mviStreamingFee: mviStreamingFee,
         bedStreamingFee: bedStreamingFee,
         gmiStreamingFee: gmiStreamingFee,

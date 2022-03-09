@@ -21,6 +21,10 @@ import {
   usdcTokenPolygonAddress,
   wlkrTokenAddress, // Added WLKR
   wlkrTokenPolygonAddress, // Added WLKR
+  wlkrrTokenAddress, // Added WLKRR
+  wlkrrTokenPolygonAddress, // Added WLKRR
+  cndlTokenAddress, // Added CNDL
+  cndlTokenPolygonAddress, // Added CNDL
   wethTokenPolygonAddress,
 } from './ethContractAddresses'
 
@@ -57,6 +61,14 @@ export const tokenInfo: any = {
     address: wlkrTokenAddress, // Added WLKR
     decimals: 18,
   },
+  wlkrr: {
+    address: wlkrrTokenAddress, // Added WLKRR
+    decimals: 18,
+  },
+  cndl: {
+    address: cndlTokenAddress, // Added CNDL
+    decimals: 18,
+  },
   index: {
     address: indexTokenAddress,
     decimals: 18,
@@ -85,6 +97,14 @@ export const polygonTokenInfo: any = {
   },
   'wlkr': {
     address: wlkrTokenPolygonAddress, // Added WLKR
+    decimals: 18,
+  },
+  'wlkrr': {
+    address: wlkrrTokenPolygonAddress, // Added WLKRR
+    decimals: 18,
+  },
+  'cndl': {
+    address: cndlTokenPolygonAddress, // Added CNDL
     decimals: 18,
   },
   'gmi': {

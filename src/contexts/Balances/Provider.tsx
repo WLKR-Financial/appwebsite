@@ -13,6 +13,10 @@ import {
   dpiTokenPolygonAddress,
   wlkrTokenAddress, // added WLKR
   wlkrTokenPolygonAddress, // added WLKR
+  wlkrrTokenAddress, // added WLKRR
+  wlkrrTokenPolygonAddress, // added WLKRR
+  cndlTokenAddress, // added CNDL
+  cndlTokenPolygonAddress, // added CNDL
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   farmTwoAddress,
@@ -49,6 +53,8 @@ const Provider: React.FC = ({ children }) => {
   const [indexBalance, setIndexBalance] = useState<BigNumber>()
   const [dpiBalance, setDpiBalance] = useState<BigNumber>()
   const [wlkrBalance, setWlkrBalance] = useState<BigNumber>() // Added WLKR
+  const [cndlBalance, setCndlBalance] = useState<BigNumber>() // Added WLKRR
+  const [wlkrrBalance, setWlkrrBalance] = useState<BigNumber>() // Added CNDL
   const [ethfliBalance, setEthFliBalance] = useState<BigNumber>()
   const [btcfliBalance, setBtcFliBalance] = useState<BigNumber>()
   const [mviBalance, setMviBalance] = useState<BigNumber>()
@@ -62,6 +68,8 @@ const Provider: React.FC = ({ children }) => {
   const [wethBalancePolygon, setWethBalancePolygon] = useState<BigNumber>()
   const [dpiBalancePolygon, setDpiBalancePolygon] = useState<BigNumber>()
   const [wlkrBalancePolygon, setWlkrBalancePolygon] = useState<BigNumber>() // Added WLKR
+  const [wlkrrBalancePolygon, setWlkrrBalancePolygon] = useState<BigNumber>() // Added WLKRR
+  const [cndlBalancePolygon, setCndlBalancePolygon] = useState<BigNumber>() // Added CNDL
   const [ethflipBalance, setEthFlipBalance] = useState<BigNumber>()
   const [mviBalancePolygon, setMviBalancePolygon] = useState<BigNumber>()
   const [daiBalancePolygon, setDaiBalancePolygon] = useState<BigNumber>()
@@ -108,8 +116,12 @@ const Provider: React.FC = ({ children }) => {
         !indexTokenAddress ||
         !dpiTokenAddress ||
         !dpiTokenPolygonAddress ||
-        !wlkrTokenAddress ||
-        !wlkrTokenPolygonAddress ||
+        !wlkrTokenAddress || // Added WLKR
+        !wlkrTokenPolygonAddress || // Added WLKR Polygon
+        !wlkrrTokenAddress || // Added WLKRR
+        !wlkrrTokenPolygonAddress || // Added WLKRR Polygon
+        !cndlTokenAddress || // // Added CNDL
+        !cndlTokenPolygonAddress || // Added CNDL Polygon
         !eth2xfliTokenAddress ||
         !eth2xflipTokenAddress ||
         !btc2xfliTokenAddress ||
@@ -145,6 +157,8 @@ const Provider: React.FC = ({ children }) => {
           getBalance(provider, indexTokenAddress, userAddress),
           getBalance(provider, dpiTokenAddress, userAddress),
           getBalance(provider, wlkrTokenAddress, userAddress), // Added WLKR
+          getBalance(provider, wlkrrTokenAddress, userAddress), // Added WLKRR
+          getBalance(provider, cndlTokenAddress, userAddress), // Added CNDL
           getBalance(provider, eth2xfliTokenAddress, userAddress),
           getBalance(provider, btc2xfliTokenAddress, userAddress),
           getBalance(provider, mviTokenAddress, userAddress),
@@ -181,23 +195,25 @@ const Provider: React.FC = ({ children }) => {
         setIndexBalance(new BigNumber(balances[1]))
         setDpiBalance(new BigNumber(balances[2]))
         setWlkrBalance(new BigNumber(balances[3])) // Added WLKR
-        setEthFliBalance(new BigNumber(balances[4]))
-        setBtcFliBalance(new BigNumber(balances[5]))
-        setMviBalance(new BigNumber(balances[6]))
-        setDaiBalance(new BigNumber(balances[7]))
-        setUsdcBalance(new BigNumber(balances[8]))
-        setBedBalance(new BigNumber(balances[9]))
-        setDataBalance(new BigNumber(balances[10]))
-        setGmiBalance(new BigNumber(balances[11]))
-        setUniswapEthDpiLpBalance(new BigNumber(balances[12]))
-        setUniswapEthMviLpBalance(new BigNumber(balances[13]))
-        setStakedUniswapEthDpiLpBalance(new BigNumber(balances[14]))
-        setUnharvestedIndexBalance(new BigNumber(balances[15]))
-        setStakedFarmTwoBalance(new BigNumber(balances[16]))
-        setUnharvestedFarmTwoBalance(new BigNumber(balances[17]))
+        setWlkrrBalance(new BigNumber(balances[4])) // Added WLKRR
+        setCndlBalance(new BigNumber(balances[5])) // Added CNDL
+        setEthFliBalance(new BigNumber(balances[6]))
+        setBtcFliBalance(new BigNumber(balances[7]))
+        setMviBalance(new BigNumber(balances[8]))
+        setDaiBalance(new BigNumber(balances[9]))
+        setUsdcBalance(new BigNumber(balances[10]))
+        setBedBalance(new BigNumber(balances[11]))
+        setDataBalance(new BigNumber(balances[12]))
+        setGmiBalance(new BigNumber(balances[13]))
+        setUniswapEthDpiLpBalance(new BigNumber(balances[14]))
+        setUniswapEthMviLpBalance(new BigNumber(balances[15]))
+        setStakedUniswapEthDpiLpBalance(new BigNumber(balances[16]))
+        setUnharvestedIndexBalance(new BigNumber(balances[17]))
+        setStakedFarmTwoBalance(new BigNumber(balances[18]))
+        setUnharvestedFarmTwoBalance(new BigNumber(balances[19]))
 
-        setStakedGmiBalance(new BigNumber(balances[18]))
-        setUnharvestedIndexFromGmiBalance(new BigNumber(balances[19]))
+        setStakedGmiBalance(new BigNumber(balances[20]))
+        setUnharvestedIndexFromGmiBalance(new BigNumber(balances[21]))
 
 
         // BN Balances
@@ -209,6 +225,8 @@ const Provider: React.FC = ({ children }) => {
           getBalance(provider, wethTokenPolygonAddress, userAddress),
           getBalance(provider, dpiTokenPolygonAddress, userAddress),
           getBalance(provider, wlkrTokenPolygonAddress, userAddress), // Added WLKR
+          getBalance(provider, wlkrrTokenPolygonAddress, userAddress), // Added WLKRR
+          getBalance(provider, cndlTokenPolygonAddress, userAddress), // Added CNDL
           getBalance(provider, eth2xflipTokenAddress, userAddress),
           getBalance(provider, mviTokenPolygonAddress, userAddress),
           getBalance(provider, daiTokenPolygonAddress, userAddress),
@@ -223,16 +241,18 @@ const Provider: React.FC = ({ children }) => {
         // polygon
         setWethBalancePolygon(new BigNumber(balances[0]))
         setDpiBalancePolygon(new BigNumber(balances[1]))
-        setWlkrBalancePolygon(new BigNumber(balances[2]))
-        setEthFlipBalance(new BigNumber(balances[3]))
-        setMviBalancePolygon(new BigNumber(balances[4]))
-        setDaiBalancePolygon(new BigNumber(balances[5]))
-        setUsdcBalancePolygon(new BigNumber(balances[6]))
-        setDataBalancePolygon(new BigNumber(balances[7]))
-        setGmiBalancePolygon(new BigNumber(balances[8]))
-        setIEthFlipBalance(new BigNumber(balances[9]))
-        setIMaticFlipBalance(new BigNumber(balances[10]))
-        setMaticFlipBalance(new BigNumber(balances[11]))
+        setWlkrBalancePolygon(new BigNumber(balances[2])) // Added WLKR
+        setWlkrrBalancePolygon(new BigNumber(balances[3])) // Added WLKRR
+        setCndlBalancePolygon(new BigNumber(balances[4])) // Added CNDL
+        setEthFlipBalance(new BigNumber(balances[5]))
+        setMviBalancePolygon(new BigNumber(balances[6]))
+        setDaiBalancePolygon(new BigNumber(balances[7]))
+        setUsdcBalancePolygon(new BigNumber(balances[8]))
+        setDataBalancePolygon(new BigNumber(balances[9]))
+        setGmiBalancePolygon(new BigNumber(balances[10]))
+        setIEthFlipBalance(new BigNumber(balances[11]))
+        setIMaticFlipBalance(new BigNumber(balances[12]))
+        setMaticFlipBalance(new BigNumber(balances[13]))
       }
     },
     [
@@ -241,7 +261,9 @@ const Provider: React.FC = ({ children }) => {
       setWethBalancePolygon,
       setIndexBalance,
       setDpiBalance,
-      setWlkrBalance,
+      setWlkrBalance, // Added WLKR
+      setWlkrrBalance, // Added WLKRR
+      setCndlBalance, // Added CNDL
       setEthFliBalance,
       setEthFlipBalance,
       setBtcFliBalance,
@@ -274,8 +296,12 @@ const Provider: React.FC = ({ children }) => {
       setIndexBalance(new BigNumber(0))
       setDpiBalance(new BigNumber(0))
       setDpiBalancePolygon(new BigNumber(0))
-      setWlkrBalance(new BigNumber(0))
-      setWlkrBalancePolygon(new BigNumber(0))
+      setWlkrBalance(new BigNumber(0)) // Added WLKR
+      setWlkrBalancePolygon(new BigNumber(0)) // Added WLKR
+      setWlkrrBalance(new BigNumber(0)) // Added WLKRR
+      setWlkrrBalancePolygon(new BigNumber(0)) // Added WLKRR
+      setCndlBalance(new BigNumber(0)) // Added CNDL
+      setCndlBalancePolygon(new BigNumber(0)) // Added CNDL
       setEthFliBalance(new BigNumber(0))
       setEthFlipBalance(new BigNumber(0))
       setBtcFliBalance(new BigNumber(0))
@@ -325,8 +351,12 @@ const Provider: React.FC = ({ children }) => {
         indexBalance,
         dpiBalance,
         dpiBalancePolygon,
-        wlkrBalance,
-        wlkrBalancePolygon,
+        wlkrBalance, // Added WLKR
+        wlkrBalancePolygon, // Added WLKR
+        wlkrrBalance, // Added WLKRR
+        wlkrrBalancePolygon, // Added WLKRR
+        cndlBalance, // Added CNDL
+        cndlBalancePolygon, // Added CNDL
         ethfliBalance,
         ethflipBalance,
         btcfliBalance,

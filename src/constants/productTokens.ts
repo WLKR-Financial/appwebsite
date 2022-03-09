@@ -1,7 +1,9 @@
 import bedBorderLogo from 'assets/bed-border.png'
 import dataLogo from 'assets/data-logo.png'
 import gmiLogo from 'assets/gmilogo.png'
-import wlkrinnovationLogo from 'assets/wlkrlogo.png'
+import wlkrinnovationLogo from 'assets/wlkrlogo.png' // Added WLKR
+import wlkrrLogo from 'assets/wlkrlogo.png' // Added WLKRR
+import cndlLogo from 'assets/wlkrlogo.png' // Added CNDL
 import iethflipLogo from 'assets/iethfliplogo.svg'
 import imaticflipLogo from 'assets/imaticflilogo.svg'
 import indexLogo from 'assets/index-token.png'
@@ -45,6 +47,30 @@ export const IndexToken: ProductToken = {
   coingeckoId: 'index-cooperative',
   tokensetsId: 'index',
   tokenSelector: 'index',
+  fees: undefined,
+}
+
+export const WalkerToken: ProductToken = { // Added WLKRR
+  name: 'Walker Token',
+  symbol: 'WLKRR',
+  address: tokenAddresses.wlkrrTokenAddress,
+  polygonAddress: tokenAddresses.wlkrrTokenPolygonAddress,
+  image: wlkrrLogo,
+  coingeckoId: 'wlkrr',
+  tokensetsId: 'wlkrr',
+  tokenSelector: 'wlkrr',
+  fees: undefined,
+}
+
+export const CandleToken: ProductToken = {
+  name: 'Candle Token',
+  symbol: 'CNDL',
+  address: tokenAddresses.cndlTokenAddress,
+  polygonAddress: tokenAddresses.cndlTokenPolygonAddress,
+  image: cndlLogo,
+  coingeckoId: 'candle',
+  tokensetsId: 'candle',
+  tokenSelector: 'candle',
   fees: undefined,
 }
 
@@ -177,7 +203,7 @@ export const IMaticFLIP: ProductToken = {
   },
 }
 
-export const WLKRInnovation: ProductToken = {
+export const WLKRInnovation: ProductToken = {     // Added WLKR
   name: 'Walker Innovation',
   symbol: 'WLKR',
   address: tokenAddresses.wlkrTokenAddress,
@@ -217,7 +243,9 @@ export const productTokensBySymbol = {
   'BTC2x-FLI': Bitcoin2xFlexibleLeverageIndex,
   'BED': BedIndex,
   'DATA': DataIndex,
-  'WLKR': WLKRInnovation,
+  'WLKR': WLKRInnovation, // Added WLKR
+  'WLKRR': WalkerToken, // Added WLKRR
+  'CNDL': CandleToken, // Added CNDL
   'GMI': GmiIndex,
 }
 
@@ -230,7 +258,9 @@ const indexNames = [
   Bitcoin2xFlexibleLeverageIndex,
   BedIndex,
   DataIndex,
-  WLKRInnovation,
+  WLKRInnovation, // Added WLKR
+  WalkerToken, // Added WLKRR
+  CandleToken, // Added CNDL
   GmiIndex,
 ]
 

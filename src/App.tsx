@@ -21,6 +21,8 @@ import ChainIdProvider from 'contexts/ChainData/ChainDataProvider'
 import { DataTokenMarketDataProvider } from 'contexts/DataTokenMarketData'
 import { DpiTokenMarketDataProvider } from 'contexts/DpiTokenMarketData'
 import { WlkrTokenMarketDataProvider } from 'contexts/WlkrTokenMarketData' // Added WLKR
+import { WlkrrTokenMarketDataProvider } from 'contexts/WlkrrTokenMarketData' // Added WLKRR
+import { CndlTokenMarketDataProvider } from 'contexts/CndlTokenMarketData' // Added CNDL
 import { Eth2xFLIPTokenMarketDataProvider } from 'contexts/Eth2xFLIPTokenMarketData'
 import { Eth2xFLIPTokenSupplyCapProvider } from 'contexts/Eth2xFLIPTokenSupplyCap'
 import { Eth2xFliTokenMarketDataProvider } from 'contexts/Eth2xFliTokenMarketData'

@@ -64,7 +64,9 @@ export const may2021RewardsAddress =
 // Mainnet Addresses
 export const indexTokenAddress = process.env.REACT_APP_INDEX_TOKEN_ADDRESS
 export const dpiTokenAddress = process.env.REACT_APP_DPI_TOKEN_ADDRESS
-export const wlkrTokenAddress = process.env.REACT_APP_WLKR_TOKEN_ADDRESS
+export const wlkrTokenAddress = process.env.REACT_APP_WLKR_TOKEN_ADDRESS // Added WLKR
+export const wlkrrTokenAddress = process.env.REACT_APP_WLKRR_TOKEN_ADDRESS // Added WLKRR
+export const cndlTokenAddress = process.env.REACT_APP_CNDL_TOKEN_ADDRESS // Added CNDL
 export const eth2xfliTokenAddress =
   process.env.REACT_APP_ETH2X_FLI_TOKEN_ADDRESS
 export const mviTokenAddress = process.env.REACT_APP_MVI_TOKEN_ADDRESS
@@ -89,8 +91,12 @@ export const indexTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_INDEX_TOKEN_ADDRESS
 export const dpiTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_DPI_TOKEN_ADDRESS
-export const wlkrTokenPolygonAddress =
+export const wlkrTokenPolygonAddress = // Added WLKR
   process.env.REACT_APP_POLYGON_WLKR_TOKEN_ADDRESS
+export const wlkrrTokenPolygonAddress = // Added WLKRR
+  process.env.REACT_APP_POLYGON_WLKRR_TOKEN_ADDRESS
+export const cndlTokenPolygonAddress = // Added CNDL
+  process.env.REACT_APP_POLYGON_CNDL_TOKEN_ADDRESS
 export const mviTokenPolygonAddress =
   process.env.REACT_APP_POLYGON_MVI_TOKEN_ADDRESS
 export const daiTokenPolygonAddress =
