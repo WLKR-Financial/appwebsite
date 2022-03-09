@@ -6,12 +6,12 @@ import { fetchHistoricalTokenMarketData } from 'utils/coingeckoApi'
 import MarketDataContext from './WlkrrTokenMarketDataContext'
 
 const WlkrrMarketDataProvider: React.FC = ({ children }) => {
-  const [walkerMarketData, setWalkerMarketData] = useState<any>({})
+  const [wlkrrMarketData, setWlkrrMarketData] = useState<any>({})
 
   useEffect(() => {
     fetchHistoricalTokenMarketData(WalkerToken.coingeckoId)
       .then((response: any) => {
-        setWalkerMarketData(response)
+        setWlkrrMarketData(response)
       })
       .catch((error: any) => console.log(error))
   }, [])

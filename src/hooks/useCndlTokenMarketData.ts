@@ -2,7 +2,7 @@ import { useContext } from 'react'
 
 import { CndlTokenMarketDataContext } from 'contexts/CndlTokenMarketData'
 
-const useIndexTokenMarketData = () => {
+const useCndlTokenMarketData = () => {
   return { ...useContext(CndlTokenMarketDataContext) }
 }
 
