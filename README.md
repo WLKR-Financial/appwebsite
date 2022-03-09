@@ -1,8 +1,8 @@
-# Index UI
+# walker UI
 
 [![License](https://img.shields.io/:license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
-Index UI is a simple front-end used to interact with Index. This front-end describes Index and consolidates relevant links to onboard users onto the protocol's basic functionalities. It also allows users to stake, unstake, and claim INDEX tokens during the initial distribution + liquidity mining phase of the protocol's launch.
+Walker UI is a simple front-end used to interact with walker. This front-end describes walker and consolidates relevant links to onboard users onto the protocol's basic functionalities. It also allows users to stake, unstake, and claim walker tokens during the initial distribution + liquidity mining phase of the protocol's launch.
 
 ## Local development
 
@@ -91,9 +91,9 @@ npx browserslist --update-db
 
 ## Contributing
 
-The main purpose of this repository is to continually serve the needs of Index, making it faster, simpler, and easier to use. As new proposals are submitted and the scope of Index's governance evolves, we anticipate this tool will change as well.
+The main purpose of this repository is to continually serve the needs of walker, making it faster, simpler, and easier to use. As new proposals are submitted and the scope of walker's governance evolves, we anticipate this tool will change as well.
 
-We greatly encourage any community contribution that may help Index reach more users and promote greater adoption, so be sure to check out our [Contribution Guidelines](https://github.com/SetProtocol/index-ui/blob/master/CONTRIBUTING.md) for ways to get involved with our project.
+We greatly encourage any community contribution that may help walker reach more users and promote greater adoption, so be sure to check out our [Contribution Guidelines](https://github.com/SetProtocol/walker-ui/blob/master/CONTRIBUTING.md) for ways to get involved with our project.
 
 ## Style Guide
 
@@ -132,4 +132,4 @@ import Explanation from 'components/Explanation'
 
 ## License
 
-Index UI is MIT licensed.
+walker UI is MIT licensed.
