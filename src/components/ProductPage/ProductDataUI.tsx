@@ -15,7 +15,7 @@ import {
   TokenStats,
   WalletBalance,
 } from 'components/ProductPage'
-import { IndexToken, ProductToken } from 'constants/productTokens'
+import { WalkerToken, ProductToken } from 'constants/productTokens'
 import { SetComponent } from 'contexts/SetComponents/SetComponent'
 import useChainData from 'hooks/useChainData'
 import useLocalStorage from 'hooks/useLocalStorage'
@@ -103,7 +103,7 @@ const ProductDataUI: React.FC<ProductDataUIProps> = ({
           {getBuySellWrapper()}
         </ProductPageHeader>
         <ProductPageContent>
-          {tokenData.token.symbol !== IndexToken.symbol && (
+          {tokenData.token.symbol !== WalkerToken.symbol && (
             <TokenStats
               latestVolume={tokenData.latestVolume}
               latestMarketCap={tokenData.latestMarketCap}

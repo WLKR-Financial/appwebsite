@@ -22,7 +22,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
             to='/wlkr'
             onClick={onDismiss}
           >
-            WLKR Innovation Index
+            WLKR Innovation
           </StyledLink>
           <StyledLink
             exact
@@ -99,15 +99,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           <StyledLink
             exact
             activeClassName='active'
-            to='/gmi'
+            to='/cndl'
             onClick={onDismiss}
           >
-            Bankless GMI Index
+            Candle Token
           </StyledLink>
           <StyledLink
             exact
             activeClassName='active'
-            to='/index'
+            to='/wlkrr'
             onClick={onDismiss}
           >
             WLKR Token
