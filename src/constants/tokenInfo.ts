@@ -5,18 +5,13 @@ import {
   daiTokenPolygonAddress,
   dataTokenAddress,
   dataTokenPolygonAddress,
-  dpiTokenAddress,
-  dpiTokenPolygonAddress,
   eth2xflipTokenAddress,
   eth2xfliTokenAddress,
   gmiTokenAddress,
   gmiTokenPolygonAddress,
   iethflipTokenAddress,
   imaticflipTokenAddress,
-  indexTokenAddress,
   matic2xflipTokenAddress,
-  mviTokenAddress,
-  mviTokenPolygonAddress,
   usdcTokenAddress,
   usdcTokenPolygonAddress,
   wlkrTokenAddress, // Added WLKR
@@ -35,14 +30,6 @@ export const tokenInfo: any = {
   },
   btcfli: {
     address: btc2xfliTokenAddress,
-    decimals: 18,
-  },
-  dpi: {
-    address: dpiTokenAddress,
-    decimals: 18,
-  },
-  mvi: {
-    address: mviTokenAddress,
     decimals: 18,
   },
   bed: {
@@ -69,10 +56,6 @@ export const tokenInfo: any = {
     address: cndlTokenAddress, // Added CNDL
     decimals: 18,
   },
-  index: {
-    address: indexTokenAddress,
-    decimals: 18,
-  },
   DAI: {
     address: daiTokenAddress,
     decimals: 18,
@@ -91,10 +74,6 @@ export const polygonTokenInfo: any = {
     address: dataTokenPolygonAddress,
     decimals: 18,
   },
-  'dpi': {
-    address: dpiTokenPolygonAddress,
-    decimals: 18,
-  },
   'wlkr': {
     address: wlkrTokenPolygonAddress, // Added WLKR
     decimals: 18,
@@ -109,10 +88,6 @@ export const polygonTokenInfo: any = {
   },
   'gmi': {
     address: gmiTokenPolygonAddress,
-    decimals: 18,
-  },
-  'mvi': {
-    address: mviTokenPolygonAddress,
     decimals: 18,
   },
   'DAI': {

@@ -209,7 +209,7 @@ export const WLKRInnovation: ProductToken = {     // Added WLKR
   address: tokenAddresses.wlkrTokenAddress,
   polygonAddress: tokenAddresses.wlkrTokenPolygonAddress,
   image: wlkrinnovationLogo,
-  coingeckoId: 'index-coop-inverse-matic-flexible-leverage-index',
+  coingeckoId: 'wlkr',
   tokensetsId: 'wlkrinnovation',
   tokenSelector: 'wlkrinnovation',
   fees: {
@@ -235,11 +235,8 @@ export const IEthereumFLIP: ProductToken = {
 }
 
 export const productTokensBySymbol = {
-  'DPI': DefiPulseIndex,
-  'MVI': MetaverseIndex,
   'ETH2x-FLI': Ethereum2xFlexibleLeverageIndex,
   'ETH2x-FLI-P': Ethereum2xFLIP,
-  'INDEX': IndexToken,
   'BTC2x-FLI': Bitcoin2xFlexibleLeverageIndex,
   'BED': BedIndex,
   'DATA': DataIndex,
@@ -250,11 +247,8 @@ export const productTokensBySymbol = {
 }
 
 const indexNames = [
-  DefiPulseIndex,
-  MetaverseIndex,
   Ethereum2xFlexibleLeverageIndex,
   Ethereum2xFLIP,
-  IndexToken,
   Bitcoin2xFlexibleLeverageIndex,
   BedIndex,
   DataIndex,
