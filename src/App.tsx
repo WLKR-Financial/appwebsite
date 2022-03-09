@@ -65,9 +65,7 @@ import Farm from 'views/Farm'
 import GMI from 'views/GMI'
 import IETHFLIP from 'views/IETHFLIP'
 import IMATICFLIP from 'views/IMATICFLIP'
-import INDEX from 'views/INDEX'
 import MATIC2XFLIP from 'views/MATIC2XFLIP'
-import MVI from 'views/MVI'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -105,13 +103,13 @@ const App: React.FC = () => {
           />
           <Switch>
             <Route exact path='/'>
-              <DPI title={'Index - WLKR'} />
+              <WLKR title={'Index - WLKR'} />
             </Route>
             <Route exact path='/wlkr'>
-              <DPI title={'Index - WLKR'} />
+              <WLKR title={'Index - WLKR'} />
             </Route>
             <Route exact path='/cndl'>
-              <MVI title={'Index - CNDL'} />
+              <CNDL title={'Index - CNDL'} />
             </Route>
             <Route exact path='/ethfli'>
               <ETH2XFLI title={'Index - ETH2xFLI'} />
@@ -141,7 +139,7 @@ const App: React.FC = () => {
               <IMATICFLIP title={'Index - iMATIC-FLI-P'} />
             </Route>
             <Route exact path='/wlkrr'>
-              <INDEX title={'Index - Walker'} />
+              <WLKRR title={'Index - Walker'} />
             </Route>
             <Route exact path='/liquidity-mining'>
               <Farm title={'Index - Liquidity Mining'} />

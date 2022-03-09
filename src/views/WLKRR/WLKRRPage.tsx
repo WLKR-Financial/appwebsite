@@ -7,7 +7,7 @@ import { WalkerToken } from 'constants/productTokens'
 import useBalances from 'hooks/useBalances'
 import useWlkrrTokenMarketData from 'hooks/useWlkrrTokenMarketData'
 
-const DpiProductPage = (props: { title: string }) => {
+const WlkrrProductPage = (props: { title: string }) => {
   useEffect(() => {
     document.title = props.title
   }, [props.title])
@@ -29,4 +29,4 @@ const DpiProductPage = (props: { title: string }) => {
   return <ProductDataUI tokenDataProps={tokenDataProps} />
 }
 
-export default DpiProductPage
+export default WlkrrProductPage

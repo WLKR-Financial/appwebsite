@@ -7,7 +7,7 @@ import { CandleToken } from 'constants/productTokens'
 import useBalances from 'hooks/useBalances'
 import useCndlTokenMarketData from 'hooks/useCndlTokenMarketData'
 
-const DpiProductPage = (props: { title: string }) => {
+const CndlProductPage = (props: { title: string }) => {
   useEffect(() => {
     document.title = props.title
   }, [props.title])
@@ -29,4 +29,4 @@ const DpiProductPage = (props: { title: string }) => {
   return <ProductDataUI tokenDataProps={tokenDataProps} />
 }
 
-export default DpiProductPage
+export default CndlProductPage
