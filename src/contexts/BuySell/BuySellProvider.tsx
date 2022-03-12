@@ -8,15 +8,15 @@ import {
   BedIndex,
   Bitcoin2xFlexibleLeverageIndex,
   DataIndex,
-  DefiPulseIndex,
+  WLKRInnovation, // Added WLKR
   Ethereum2xFlexibleLeverageIndex,
   Ethereum2xFLIP,
   GmiIndex,
   IEthereumFLIP,
   IMaticFLIP,
-  IndexToken,
+  WalkerToken, // Added WLKRR
   Matic2xFLIP,
-  MetaverseIndex,
+  CandleToken, // Added CNDL
 } from 'constants/productTokens'
 import { TransactionStatusType } from 'contexts/TransactionWatcher'
 import useBalances from 'hooks/useBalances'
@@ -46,8 +46,12 @@ const BuySellProvider: React.FC = ({ children }) => {
   const {
     ethBalance,
     wethBalancePolygon,
-    dpiBalance,
-    dpiBalancePolygon,
+    wlkrBalance, // Added WLKR
+    wlkrBalancePolygon, // Added WLKR
+    wlkrrBalance, // Added WLKRR
+    wlkrrBalancePolygon, // Added WLKRR
+    cndlBalance, // Added CNDL
+    cndlBalancePolygon, // Added CNDL
     mviBalance,
     mviBalancePolygon,
     bedBalance,
@@ -86,10 +90,10 @@ const BuySellProvider: React.FC = ({ children }) => {
 
   // eslint-disable-next-line
   let spendingTokenBalance = new BigNumber(0)
-  if (!isUserBuying && buySellToken === IndexToken.tokenSelector) {
-    spendingTokenBalance = fromWei(indexBalance)
-  } else if (!isUserBuying && buySellToken === DefiPulseIndex.tokenSelector) {
-    spendingTokenBalance = getNetworkedBalance(dpiBalance, dpiBalancePolygon)
+  if (!isUserBuying && buySellToken === WalkerToken.tokenSelector) {
+    spendingTokenBalance = fromWei(wlkrrBalance)
+  } else if (!isUserBuying && buySellToken === WLKRInnovation.tokenSelector) {
+    spendingTokenBalance = getNetworkedBalance(wlkrBalance, wlkrBalancePolygon)
   } else if (
     !isUserBuying &&
     buySellToken === Ethereum2xFlexibleLeverageIndex.tokenSelector
@@ -108,8 +112,8 @@ const BuySellProvider: React.FC = ({ children }) => {
     buySellToken === Bitcoin2xFlexibleLeverageIndex.tokenSelector
   ) {
     spendingTokenBalance = fromWei(btcfliBalance)
-  } else if (!isUserBuying && buySellToken === MetaverseIndex.tokenSelector) {
-    spendingTokenBalance = getNetworkedBalance(mviBalance, mviBalancePolygon)
+  } else if (!isUserBuying && buySellToken === CandleToken.tokenSelector) {
+    spendingTokenBalance = getNetworkedBalance(cndlBalance, cndlBalancePolygon)
   } else if (!isUserBuying && buySellToken === BedIndex.tokenSelector) {
     spendingTokenBalance = fromWei(bedBalance)
   } else if (!isUserBuying && buySellToken === GmiIndex.tokenSelector) {

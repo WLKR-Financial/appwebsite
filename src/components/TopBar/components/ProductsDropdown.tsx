@@ -23,7 +23,7 @@ const ProductsDropdown: React.FC = () => {
       pathname === '/wlkr' ||
       pathname === '/mvi' ||
       pathname === '/bed' ||
-      pathname === '/gmi' ||
+      pathname === '/cndl' ||
       pathname === '/data'
 
     return {
@@ -96,8 +96,8 @@ const ProductsDropdown: React.FC = () => {
           label: 'Data Economy Index',
         },
         {
-          value: 'gmi',
-          label: 'Bankless GMI Index',
+          value: 'cndl',
+          label: 'Candle Token',
         },
       ]}
       components={{

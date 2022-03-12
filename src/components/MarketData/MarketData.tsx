@@ -9,7 +9,7 @@ import { MetaData } from 'components/ProductPage'
 import { TokenDataProps } from 'components/ProductPage/ProductDataUI'
 import SimplePriceChart from 'components/SimplePriceChart'
 import { PriceChartRangeOption } from 'constants/priceChartEnums'
-import { IndexToken } from 'constants/productTokens'
+import { WalkerToken } from 'constants/productTokens'
 
 interface MarketDataProps extends InputProps {
   tokenData: TokenDataProps
@@ -88,7 +88,7 @@ const MarketData: React.FC<MarketDataProps> = ({ tokenData }) => {
         <span data-cy='token-symbol'>{tokenData.token.symbol}</span>
       </StyledIconLabel>
       <StyledTitle data-cy='token-name'>{tokenData.token.name}</StyledTitle>
-      {tokenData.token.symbol !== IndexToken.symbol && (
+      {tokenData.token.symbol !== WalkerToken.symbol && (
         <MetaData tokenData={tokenData} />
       )}
       <p>{dateString}</p>

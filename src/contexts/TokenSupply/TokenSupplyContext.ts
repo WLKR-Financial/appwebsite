@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js'
 
 interface TokenSupplyProps {
   dpiTotalSupply?: BigNumber
-  wlkrTotalSupply?: BigNumber
+  wlkrTotalSupply?: BigNumber // Added WLKR
   mviTotalSupply?: BigNumber
   bedTotalSupply?: BigNumber
   gmiTotalSupply?: BigNumber

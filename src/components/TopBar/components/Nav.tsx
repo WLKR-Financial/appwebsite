@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
     <StyledNav>
       <ProductsDropdown />
       <LeverageProductsDropdown />
-      <StyledLink exact activeClassName='active' to='/index'>
+      <StyledLink exact activeClassName='active' to='/wlkrr'>
         $WALKRR
       </StyledLink>
       <StyledLink exact activeClassName='active' to='/liquidity-mining'>

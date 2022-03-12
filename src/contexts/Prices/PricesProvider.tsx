@@ -7,7 +7,9 @@ import {
   btc2xfliTokenAddress,
   dataTokenAddress,
   dpiTokenAddress,
-  wlkrTokenAddress,
+  wlkrTokenAddress, // Added WLKR
+  wlkrrTokenAddress, // Added WLKRR
+  cndlTokenAddress, // Added CNDL
   eth2xfliTokenAddress,
   farmTwoAddress,
   gmiStakingRewardsAddress,
@@ -29,6 +31,8 @@ const PricesProvider: React.FC = ({ children }) => {
   const [ethereumPrice, setEthereumPrice] = useState<string>('0')
   const [dpiPrice, setDpiPrice] = useState<number>(0)
   const [wlkrPrice, setWlkrPrice] = useState<number>(0) // Added WLKR
+  const [wlkrrPrice, setWlkrrPrice] = useState<number>(0) // Added WLKRR
+  const [cndlPrice, setCndlPrice] = useState<number>(0) // Added CNDL
   const [mviPrice, setMviPrice] = useState<number>(0)
   const [bedPrice, setBedPrice] = useState<number>(0)
   const [gmiPrice, setGmiPrice] = useState<number>(0)
@@ -131,7 +135,9 @@ const PricesProvider: React.FC = ({ children }) => {
   useEffect(() => {
     const productAddresses = [
       dpiTokenAddress,
-      wlkrTokenAddress,
+      wlkrTokenAddress, // Added WLKR
+      wlkrrTokenAddress, // Added WLKRR
+      cndlTokenAddress, // Added CNDL
       mviTokenAddress,
       bedTokenAddress,
       gmiTokenAddress,
@@ -146,7 +152,9 @@ const PricesProvider: React.FC = ({ children }) => {
       .then((response) => response.json())
       .then((response) => {
         setDpiPrice(response[dpiTokenAddress?.toLowerCase() as string].usd)
-        setWlkrPrice(response[wlkrTokenAddress?.toLowerCase() as string].usd)
+        setWlkrPrice(response[wlkrTokenAddress?.toLowerCase() as string].usd) // Added WLKR
+        setWlkrrPrice(response[wlkrrTokenAddress?.toLowerCase() as string].usd) // Added WLKRR
+        setCndlPrice(response[cndlTokenAddress?.toLowerCase() as string].usd) // Added CNDL
         setMviPrice(response[mviTokenAddress?.toLowerCase() as string].usd)
         setBedPrice(response[bedTokenAddress?.toLowerCase() as string].usd)
         setGmiPrice(response[gmiTokenAddress?.toLowerCase() as string].usd)
@@ -275,7 +283,9 @@ const PricesProvider: React.FC = ({ children }) => {
         indexPrice,
         ethereumPrice,
         dpiPrice,
-        wlkrPrice,
+        wlkrPrice, // Added WLKR
+        wlkrrPrice, // Added WLKRR
+        cndlPrice, // Added CNDL
         mviPrice,
         bedPrice,
         gmiPrice,
